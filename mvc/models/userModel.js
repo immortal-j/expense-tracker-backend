@@ -19,16 +19,21 @@ const userSchema = mongoose.Schema({
     type: Number,
     default:0
   },
-  expenses: {
-    type: Array,
-    default: [],
-  },
+  expenses: [
+    {
+      amount: Number,
+      title: String,
+      description:String,
+      date: String,
+    } ,
+  ],
   groups: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Group",
     },
   ],
+  
 });
 let userModel = mongoose.model("User", userSchema);
 module.exports = userModel;
