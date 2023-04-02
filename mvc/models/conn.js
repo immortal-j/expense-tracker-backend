@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const url = 'mongodb://localhost:27017/expensetracker';
+const url = process.env.MONGO;
 
 mongoose.connect(url).then(()=>{
     console.log(
