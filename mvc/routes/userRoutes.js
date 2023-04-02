@@ -1,0 +1,11 @@
+const express = require("express");
+const { addUser } = require("../controllers/user/addUser");
+const { editUser } = require("../controllers/user/editUser");
+const { getUser } = require("../controllers/user/getUserData");
+const { login } = require("../controllers/user/login");
+let routes = express.Router();
+routes.post("/signup", addUser);
+routes.post("/getuser", getUser);
+routes.post("/login", login);
+routes.post("/edituser",editUser);
+module.exports = routes;

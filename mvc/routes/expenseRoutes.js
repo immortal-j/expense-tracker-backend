@@ -1,0 +1,13 @@
+const express = require("express");
+const {addExpense} =  require("../controllers/expense/addExpense");
+const { editExpense } = require("../controllers/expense/editExpense");
+const { deleteExpense } = require("../controllers/expense/deleteExpense");
+const { getExpense } = require("../controllers/expense/getExpenses");
+const { getTotalSpent } = require("../controllers/expense/getTotalSpent");
+let routes = express.Router();
+routes.post("/addexpense", addExpense);
+routes.post("/editexpense",editExpense);
+routes.post("/deleteexpense",deleteExpense);
+routes.post("/getexpenses",getExpense);
+routes.post("/gettotalspent",getTotalSpent);
+module.exports = routes;
