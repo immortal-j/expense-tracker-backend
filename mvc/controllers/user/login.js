@@ -10,7 +10,7 @@ const login = async (req, res) => {
     if(data.length>0)
     res.send(data[0]);
     else
-    res.send({"message":"Invalid username or password"})
+    res.status(500).send({"message":"Invalid username or password"})
   } catch (e) {
     res.status(500).send("INTERNAL ERROR");
   }
